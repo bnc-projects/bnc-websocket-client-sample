@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/bnc-projects/bnc-websocket-client-sample.svg?branch=master)](https://travis-ci.com/bnc-projects/bnc-websocket-client-sample)
+
 # BNC Websocket Client Sample
 
 This client subscribes to a few symbols and prints them out to the console.
