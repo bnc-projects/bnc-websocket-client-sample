@@ -1,9 +1,14 @@
 {
   "name": "bnc-websocket-client-sample",
-  "version": "0.1.0",
+  "description": "A sample client gor BNC Websocket API",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "postinstall": "eslint --ignore-path .gitignore ."
+  },
+  "devDependencies": {
+    "eslint": "5.0.1"
   },
   "dependencies": {
     "request": "2.88.0",
