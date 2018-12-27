@@ -9,10 +9,10 @@ client.getBearerToken().then(response => {
         ws.send('{\'event\':\'PING\'}');
 
         client.getMarketId('BTC', 'KRW')
-            .then(market => ws.send('{\'event\':\'SUBSCRIBE_TICKER\',\'marketId\':' + market.content[0].id + '}'));
+            .then(market => ws.send('{\'event\':\'SUBSCRIBE_EXCHANGE_TICKER\',\'marketId\':' + market.content[0].id + '}'));
 
         client.getMarketId('BTC', 'EUR')
-            .then(market => ws.send('{\'event\':\'SUBSCRIBE_TICKER\',\'marketId\':' + market.content[0].id + '}'));
+            .then(market => ws.send('{\'event\':\'SUBSCRIBE_EXCHANGE_TICKER\',\'marketId\':' + market.content[0].id + '}'));
 
         ws.on('close', function close() {
             console.log('disconnected');
