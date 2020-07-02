@@ -5,6 +5,8 @@ let requestId = 1;
 
 
 client.getBearerToken().then(response => {
+    console.log(`token valid for ${response.expires_in} seconds`);
+
     const ws = new WebSocket('wss://ws.bravenewcoin.com?access_token=' + response.access_token, undefined, {});
 
     ws.onclose = function close(event) {

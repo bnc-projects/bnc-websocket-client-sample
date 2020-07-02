@@ -31,7 +31,7 @@ async function getExchangeId(name) {
 }
 
 async function getBearerToken() {
-    return request.post('https://auth.bravenewcoin.com/oauth/token', {
+    return request.post('https://api.bravenewcoin.com/v3/oauth/token', {
         json: true,
         body: oauth2
     });
