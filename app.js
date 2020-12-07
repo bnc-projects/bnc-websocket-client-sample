@@ -2,12 +2,16 @@ const WebSocket = require('ws');
 const client = require('./client.js');
 
 let requestId = 1;
-const indices = ['cc7887e1-1c67-4de5-bfd0-28a999b0e62a', '3692a276-66ec-4db6-a8d8-77bd2f10c7d0'];
+const indices = [
+    'cc7887e1-1c67-4de5-bfd0-28a999b0e62a', // BTC high frequency index
+    '3692a276-66ec-4db6-a8d8-77bd2f10c7d0', // ETH high frequency index
+    'e9b180a1-c921-4c89-8a87-b9c83a2779a9', // BBDX DeFi index
+];
 
 client.getBearerToken().then(response => {
     console.log(`token valid for ${response.expires_in} seconds`);
 
-    const ws = new WebSocket('wss://dev-ws.bravenewcoin.com?access_token=' + response.access_token, undefined, {});
+    const ws = new WebSocket('wss://ws.bravenewcoin.com?access_token=' + response.access_token, undefined, {});
 
     ws.onclose = function close(event) {
         console.log('[disconnected]');
