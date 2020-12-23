@@ -3,9 +3,10 @@ const client = require('./client.js');
 
 let requestId = 1;
 const indices = [
-    'cc7887e1-1c67-4de5-bfd0-28a999b0e62a', // BTC high frequency index
-    '3692a276-66ec-4db6-a8d8-77bd2f10c7d0', // ETH high frequency index
-    'e9b180a1-c921-4c89-8a87-b9c83a2779a9', // BBDX DeFi index
+    'cc7887e1-1c67-4de5-bfd0-28a999b0e62a', // BTC high frequency
+    '3692a276-66ec-4db6-a8d8-77bd2f10c7d0', // ETH high frequency
+    '828517e2-c8ea-4b86-bea5-fe5bcd5cbce5', // USDT high frequency
+    'e9b180a1-c921-4c89-8a87-b9c83a2779a9' // BBDX (DeFi Index)
 ];
 
 client.getBearerToken().then(response => {
@@ -19,7 +20,7 @@ client.getBearerToken().then(response => {
             console.log(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
         } else {
             // e.g. server process killed or network down event.code is usually 1006 in this case.
-            console.log('[close] Connection died');
+            console.log(`[close] Connection died, code=${event.code} reason=${event.reason}`);
         }
     };
 
